@@ -10,6 +10,8 @@ var imgGClef = new Image();
 imgGClef.src = "Gclef.svg";
 var imgFClef = new Image();
 imgFClef.src = "Fclef.svg";
+var imgSharp = new Image();
+imgSharp.src = "sharp.svg";
 
 addEventListener("load", init);
 
@@ -44,32 +46,49 @@ function draw(){
 }
 
 var y_pos;
+var sharp_flag;
 
 function drawNote(){
 	for(i=0; i<128; i++){
+		sharp_flag = false;
 		switch(i % 12) {
 		    case 0:
-		    case 1:
 			y_pos = 0;
 			break;
+		    case 1:
+			y_pos = 0;
+			sharp_flag = true;
+			break;
 		    case 2:
+			y_pos = 1;
+			break;
 		    case 3:
 			y_pos = 1;
+			sharp_flag = true;
 			break;
 		    case 4:
 			y_pos = 2;
 			break;
 		    case 5:
-		    case 6:
 			y_pos = 3;
 			break;
+		    case 6:
+			y_pos = 3;
+			sharp_flag = true;
+			break;
 		    case 7:
-		    case 8:
 			y_pos = 4;
 			break;
+		    case 8:
+			y_pos = 4;
+			sharp_flag = true;
+			break;
 		    case 9:
+			y_pos = 5;
+			break;
 		    case 10:
 			y_pos = 5;
+			sharp_flag = true;
 			break;
 		    case 11:
 			y_pos = 6;
@@ -93,6 +112,7 @@ function drawNote(){
 			    ctx.fill();
 			}
 
+			if(sharp_flag) ctx.drawImage(imgSharp, 140, 227 - (y_pos * 5), 15, 36);
 		}
 	}
 }
