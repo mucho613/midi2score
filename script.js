@@ -7,7 +7,7 @@ var ctx;
 var noteState = new Array(128);
 
 var imgGClef = new Image();
-imgGClef.src = "C:/Users/Mucho/Desktop/web_midi/Gclef.svg";
+imgGClef.src = "Gclef.svg";
 
 addEventListener("load", init);
 
@@ -21,11 +21,11 @@ function init(){
 }
 
 function draw(){
-	// ˆê’U‘S•”ƒNƒŠƒA
+	// ä¸€æ—¦å…¨éƒ¨ã‚¯ãƒªã‚¢
 	ctx.beginPath();
 	ctx.clearRect(0, 0, scoreCanvas.width, scoreCanvas.height);
 
-	// ŒÜü•ˆ‚ğ•`‰æ
+	// äº”ç·šè­œã‚’æç”»
 	ctx.beginPath();
 	for(i=0; i<11; i++){
 	    if(i!=5){
@@ -35,10 +35,10 @@ function draw(){
 	}
 	ctx.stroke();
 
-	// ‰¹•„‚ğ•`‰æ
+	// éŸ³ç¬¦ã‚’æç”»
 	drawNote();
 
-	// ƒg‰¹‹L†‚ğ•`‰æ
+	// ãƒˆéŸ³è¨˜å·ã‚’æç”»
 	ctx.drawImage(imgGClef, 30, 0, 30, 80);
 
 	requestAnimationFrame(draw);
@@ -48,7 +48,7 @@ var y_pos;
 
 function drawNote(){
 	for(i=0; i<128; i++){
-		// ‰¹•„‚Ìc‚ÌÀ•W‚ğŒvZ‚·‚é
+		// éŸ³ç¬¦ã®ç¸¦ã®åº§æ¨™ã‚’è¨ˆç®—ã™ã‚‹
 		switch(i % 12) {
 		    case 0:
 		    case 1:
@@ -120,14 +120,14 @@ function errorCallback() {
 }
 function onMIDIEvent(e){
 	if(e.data[0] == 144 && e.data[2] != 0){
-		console.log(e.data[1] + " ”Ô‚ÌŒ®”Õ‚ª‰Ÿ‚³‚ê‚½");
+		console.log(e.data[1] + " ç•ªã®éµç›¤ãŒæŠ¼ã•ã‚ŒãŸ");
 		noteState[e.data[1]] = true;
 	}
 	if(e.data[0] == 144 && e.data[2] == 0){
 		noteState[e.data[1]] = false;
 	}
 	if(e.data[0] == 128){
-		console.log(e.data[1] + " ”Ô‚ÌŒ®”Õ‚ª—£‚³‚ê‚½");
+		console.log(e.data[1] + " ç•ªã®éµç›¤ãŒé›¢ã•ã‚ŒãŸ");
 		noteState[e.data[1]] = false;
 	}
 }
