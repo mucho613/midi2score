@@ -96,6 +96,13 @@ function drawNote(){
 		}
 		y_pos += Math.floor(i / 12) * 7;
 		if(noteState[i] == true){
+			if(i == 60 || i == 61){
+				ctx.beginPath();
+				ctx.moveTo(118, 70);
+				ctx.lineTo(144, 70);
+				ctx.stroke();
+			}
+
 			if(i > 0 && noteState[i - 1] == false){
 			    ctx.beginPath();
 			    ctx.ellipse(130, 245 - (y_pos * 5), 6, 8, 70* Math.PI/180, 0, 2 * Math.PI);
