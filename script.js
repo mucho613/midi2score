@@ -8,6 +8,8 @@ var noteState = new Array(128);
 
 var imgGClef = new Image();
 imgGClef.src = "Gclef.svg";
+var imgFClef = new Image();
+imgFClef.src = "FClef.svg";
 
 addEventListener("load", init);
 
@@ -36,6 +38,7 @@ function draw(){
 	drawNote();
 
 	ctx.drawImage(imgGClef, 30, 0, 30, 80);
+	ctx.drawImage(imgFClef, 30, 80, 35, 38);
 
 	requestAnimationFrame(draw);
 }
