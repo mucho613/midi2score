@@ -9,7 +9,7 @@ var noteState = new Array(128);
 var imgGClef = new Image();
 imgGClef.src = "Gclef.svg";
 var imgFClef = new Image();
-imgFClef.src = "FClef.svg";
+imgFClef.src = "Fclef.svg";
 
 addEventListener("load", init);
 
