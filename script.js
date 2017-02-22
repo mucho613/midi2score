@@ -21,11 +21,9 @@ function init(){
 }
 
 function draw(){
-	// 一旦全部クリア
 	ctx.beginPath();
 	ctx.clearRect(0, 0, scoreCanvas.width, scoreCanvas.height);
 
-	// 五線譜を描画
 	ctx.beginPath();
 	for(i=0; i<11; i++){
 	    if(i!=5){
@@ -35,10 +33,8 @@ function draw(){
 	}
 	ctx.stroke();
 
-	// 音符を描画
 	drawNote();
 
-	// ト音記号を描画
 	ctx.drawImage(imgGClef, 30, 0, 30, 80);
 
 	requestAnimationFrame(draw);
@@ -48,7 +44,6 @@ var y_pos;
 
 function drawNote(){
 	for(i=0; i<128; i++){
-		// 音符の縦の座標を計算する
 		switch(i % 12) {
 		    case 0:
 		    case 1:
@@ -120,14 +115,12 @@ function errorCallback() {
 }
 function onMIDIEvent(e){
 	if(e.data[0] == 144 && e.data[2] != 0){
-		console.log(e.data[1] + " 番の鍵盤が押された");
 		noteState[e.data[1]] = true;
 	}
 	if(e.data[0] == 144 && e.data[2] == 0){
 		noteState[e.data[1]] = false;
 	}
 	if(e.data[0] == 128){
-		console.log(e.data[1] + " 番の鍵盤が離された");
 		noteState[e.data[1]] = false;
 	}
 }
