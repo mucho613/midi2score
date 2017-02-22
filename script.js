@@ -37,7 +37,7 @@ function draw(){
 
 	drawNote();
 
-	ctx.drawImage(imgGClef, 30, 0, 30, 80);
+	ctx.drawImage(imgGClef, 34, 6, 25, 70);
 	ctx.drawImage(imgFClef, 30, 80, 35, 38);
 
 	requestAnimationFrame(draw);
