@@ -103,21 +103,9 @@ function drawNote(){
 				ctx.stroke();
 			}
 
-			if(i > 0 && noteState[i - 1] == false){
 			    ctx.beginPath();
 			    ctx.ellipse(130, 245 - (y_pos * 5), 6, 8, 70* Math.PI/180, 0, 2 * Math.PI);
 			    ctx.fill();
-			}
-			else if(i > 1 && noteState[i - 1] == true && noteState[i - 2] == true){
-			    ctx.beginPath();
-			    ctx.ellipse(120, 70 - (y_pos * 5), 6, 8, 70* Math.PI/180, 0, 2 * Math.PI);
-			    ctx.fill();
-			}
-			else if(i > 0 && noteState[i - 1] == true){
-			    ctx.beginPath();
-			    ctx.ellipse(130, 70 - (y_pos * 5), 6, 8, 70* Math.PI/180, 0, 2 * Math.PI);
-			    ctx.fill();
-			}
 
 			if(sharp_flag) ctx.drawImage(imgSharp, 140, 227 - (y_pos * 5), 15, 36);
 		}
