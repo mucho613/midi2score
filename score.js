@@ -107,7 +107,7 @@ function drawNote(){
 			    ctx.ellipse(130, 245 - (y_pos * 5), 6, 8, 70* Math.PI/180, 0, 2 * Math.PI);
 			    ctx.fill();
 
-			if(sharp_flag) ctx.drawImage(imgSharp, 140, 227 - (y_pos * 5), 15, 36);
+			if(sharp_flag) ctx.drawImage(imgSharp, 100, 227 - (y_pos * 5), 15, 36);
 		}
 	}
 }
