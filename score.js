@@ -25,7 +25,6 @@ function init(){
 }
 
 function draw(){
-	ctx.beginPath();
 	ctx.clearRect(0, 0, scoreCanvas.width, scoreCanvas.height);
 
 	ctx.beginPath();
