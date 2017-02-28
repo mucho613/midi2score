@@ -1,0 +1,12 @@
+.score {
+	display: block;
+	max-width: 1000px;
+	width: 50%;
+	margin: 0 auto;
+}
+.metronome-controller {
+	max-width: 1000px;
+	display: block;
+	margin: 0 auto;
+}
+
